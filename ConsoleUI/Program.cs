@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using AdvancedTopicsYT;
+using Algorithms;
 
 namespace ConsoleUI
 {
@@ -9,8 +10,8 @@ namespace ConsoleUI
         delegate void LogDel(string text);
         static void Main(string[] args)
         {
-            Log logObject = new Log();
-            logObject.Run();
+            ArrayTypes arrayTypes = new ArrayTypes();
+            arrayTypes.SingleDimensionalArrays();
         }
     }
 }
