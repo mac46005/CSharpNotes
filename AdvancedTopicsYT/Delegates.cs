@@ -14,5 +14,10 @@ namespace AdvancedTopicsYT{
                 sw.WriteLine($"{DateTime.Now} : {text}");
             }
         }
+
+        public void LogText(LogDel logDel,string text){
+            Console.WriteLine($"From {nameof(LogText)}");
+            logDel(text);
+        }
     }
 }

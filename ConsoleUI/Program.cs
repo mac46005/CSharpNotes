@@ -22,6 +22,8 @@ namespace ConsoleUI
 
             multiDelLog(input);
 
+            logObject.LogText(multiDelLog,input);
+
             Console.ReadKey();
         }
     }
