@@ -11,13 +11,16 @@ namespace ConsoleUI
         {
             Log logObject = new Log();
 
-            Log.LogDel logDel = new Log.LogDel(logObject.LogTextToScreen);
-            logDel("This is testing delegate from Log.LogDel");
+            Log.LogDel textToScreen, textToFile;
+            textToScreen = new Log.LogDel(logObject.LogTextToScreen);
+            textToFile = new Log.LogDel(logObject.LogTextToFile);
 
-            Console.WriteLine();
+            Log.LogDel multiDelLog = textToFile + textToScreen;
 
-            logDel = new Log.LogDel(logObject.LogTextToFile);
-            logDel("Marco Preciado");
+            Console.WriteLine("Input your name yo:");
+            var input = Console.ReadLine();
+
+            multiDelLog(input);
 
             Console.ReadKey();
         }
