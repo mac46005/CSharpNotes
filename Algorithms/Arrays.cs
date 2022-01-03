@@ -34,6 +34,39 @@ namespace Algorithms{
 
 
         }
+
+        /// <summary>
+        /// An array can have multiple dimensions, up to 32. For this
+        /// king of array, each row must have the same number of columns
+        /// </summary>
+        public void MultidimensionalArray(){
+
+            // This is a sample of an array with 2 rows
+            // and 3 elements each, also called a matrix
+            string[,] textArray = new string[2,3];
+
+            // You can also initialize a multidimensional arrays directly
+            int[,] intArray = new int[,]{
+                {1,2,3},
+                {4,5,6}
+            };
+
+            // Use the index position of a set value to a multidimensional
+            // array element. If there is already a value set for an element,
+            // it will be replaced
+            intArray[1,0] = 7;
+
+            // use the index position to get a value fromm a multidimensional
+            // array element
+            int number = intArray[1,0];
+
+            // To loop through a multidimensioal array, you can use the 
+            // GetUpperBound() method to get the length of a specific dimension of an array
+            for (int row = 0; row < intArray.GetUpperBound(0); row++)
+            {
+                
+            }
+        }
     }
 
     public class SampleUserDefType{
