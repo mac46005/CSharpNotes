@@ -10,21 +10,7 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             Log logObject = new Log();
-
-            Log.LogDel textToScreen, textToFile;
-            textToScreen = new Log.LogDel(logObject.LogTextToScreen);
-            textToFile = new Log.LogDel(logObject.LogTextToFile);
-
-            Log.LogDel multiDelLog = textToFile + textToScreen;
-
-            Console.WriteLine("Input your name yo:");
-            var input = Console.ReadLine();
-
-            multiDelLog(input);
-
-            logObject.LogText(multiDelLog,input);
-
-            Console.ReadKey();
+            logObject.Run();
         }
     }
 }
