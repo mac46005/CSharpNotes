@@ -50,7 +50,8 @@
                             Background="Transparent"
                             Foreground="Gray"
                             FontWeight="Bold"
-                            BorderThickness="0"/>
+                            BorderThickness="0"
+                            Click="ButtonMaximize_Click"/>
                     <Button Width="20" Height="20"
                             Content="X"
                             Background="Transparent"
