@@ -29,6 +29,7 @@
                                        Foreground="Gray"
                                        FontSize="10"/>
                             </StackPanel>
+                            
                         </StackPanel>
                     </Border>
                 </ControlTemplate>
