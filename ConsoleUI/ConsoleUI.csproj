@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdvancedTopicsYT\AdvancedTopicsYT.csproj" />
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
