@@ -7,12 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MVVM\Models\" />
-    <Folder Include="MVVM\Views\" />
     <Folder Include="Core\" />
     <Folder Include="Icons\" />
     <Folder Include="Images\" />
-    <Folder Include="Themes\" />
+    <Folder Include="MVVM\Views\" />
   </ItemGroup>
 
 </Project>
