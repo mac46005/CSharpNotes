@@ -1,17 +1,27 @@
 ﻿using System;
 using System.IO;
+using System.Timers;
 using AdvancedTopicsYT;
-using Algorithms;
 
 namespace ConsoleUI
 {
     class Program
     {
-        delegate void LogDel(string text);
+        public static int secondsCount = 0;
+        public static Timer aTmr = new Timer(1000);
         static void Main(string[] args)
         {
-            ArrayTypes arrayTypes = new ArrayTypes();
-            arrayTypes.SingleDimensionalArrays();
+            aTmr.Elapsed += ATmr_Elapsed;
+            aTmr.Enabled = true;
+            aTmr.AutoReset = true;
+            aTmr.Start();
+            Console.ReadKey();
+        }
+
+        private static void ATmr_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            secondsCount++;
+            Console.WriteLine(secondsCount + " Seconds");
         }
     }
 }

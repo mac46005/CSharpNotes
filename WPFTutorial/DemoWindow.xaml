@@ -1,0 +1,15 @@
+﻿<Window x:Class="WPFTutorial.DemoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTutorial"
+        mc:Ignorable="d"
+        Title="DemoWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Margin="273,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" Height="177"
+                 TextAlignment="Center" FontSize="45"
+                 Name="secondsBlock" Text="0 Seconds"/>
+
+    </Grid>
+</Window>
