@@ -2,6 +2,8 @@ using System;
 using System.IO;
 
 namespace AdvancedTopicsYT{
+
+    /// PART 1
     /// <summary>
     /// A delegate can be described as a type safe function pointer
     /// </summary>
@@ -84,4 +86,13 @@ namespace AdvancedTopicsYT{
             Console.ReadLine();
         }
     }
+
+
+
+
+    // Part 2 Delegates
+
+
+
+
 }
