@@ -9,6 +9,8 @@ namespace CycleClub_ConsoleUI.Models
 {
     public class User
     {
+
+        //
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string FirstName { get; set; }
