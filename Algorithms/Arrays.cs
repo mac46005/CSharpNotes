@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 namespace Algorithms{
     public class ArrayTypes{
@@ -99,7 +100,36 @@ namespace Algorithms{
                 new int[]{4,5}
             };
         }
+        /// <summary>
+        /// ArrayList is a type of array that resizes automatically as needed when the number of elements increases. ArrayList stores elements
+        /// Of object type, so it can store every object that derives from object
+        /// </summary>
+        public void ArrayList(){
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(1);
+            arrayList.Add("Test");
+            arrayList.Add(new SampleUserDefType{IntProperty = 23,TextProperty = "Test"});
 
+            foreach (object arr in arrayList)
+            {
+                Console.WriteLine(arr.GetType());
+
+                if(arr is int){
+                    Console.WriteLine(arr);
+                }
+                else if(arr is string){
+                    Console.WriteLine(arr);
+                }
+                else if(arr is SampleUserDefType){
+                    Console.WriteLine((SampleUserDefType)arr);
+                }
+            }
+
+
+
+            
+
+        }
 
 
         
