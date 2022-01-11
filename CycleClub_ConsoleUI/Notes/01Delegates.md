@@ -133,3 +133,36 @@ Even though the parameter type of MyMethod is less derived than the parameter ty
 
 
 
+# Func Action Predicate  
+
+## Func  
+Is a delegate can represent an anaymous method that takes in any number of parameters up to a total of 16 with a return type  
+```
+Func<in T,in T,...,out T> myFunc;
+
+myFunc = delegate(ar1,...,argNth) => {
+    //Do functions with args
+}
+
+myFunc = (arg1,...,argNth) => {
+    //Do function with args
+}
+
+TType = myFunc(ar1,...,arg16);
+```
+
+## Action  
+Is a delegate type that can produces anaynomous methods or be referenced. This delegate can have up to 16 parameter types and no return type   
+```
+Action<T1,...,T16> myAction;
+
+myAction = delegate(arg1,...,arg16) => {
+    // Do Action
+}
+
+myAction = (arg1,...,arg16) => {
+    //Do Action
+}
+
+myAction()
+```
