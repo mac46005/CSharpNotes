@@ -109,11 +109,11 @@ namespace FeildValidatorAPI
         /// <returns>bool</returns>
         private static bool RequiredFieldValid(string fieldVal)
         {
-            if (!string.IsNullOrEmpty(fieldVal))
+            if (string.IsNullOrEmpty(fieldVal))
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
 

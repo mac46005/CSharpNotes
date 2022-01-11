@@ -84,7 +84,9 @@ namespace CycleClub_ConsoleUI.FieldValidators
                     fieldInvalidMessage = (fieldInvalidMessage == "" && !_patternMatchValidDel(fieldValue, CommonRegularExpressionValidatorPatterns.Email_Address_RegEx_Pattern)) ? $"You must enter a valid email address{Environment.NewLine}" : fieldInvalidMessage;
 
 
-                    fieldInvalidMessage = (fieldInvalidMessage == "" && !_emailExistsDel(fieldValue)) ? $"Email already exists. Please try another email address{Environment.NewLine}" : "";
+                    fieldInvalidMessage = (fieldInvalidMessage == "" && _emailExistsDel(fieldValue)) ? $"Email already exists. Please try another email address{Environment.NewLine}" : fieldInvalidMessage;
+
+
                     break;
                 case FieldConstants.UserRegistrationField.FirstName:
                     fieldInvalidMessage = (!_requiredValidDel(fieldValue)) ? $"You must enter a value for field:{Enum.GetName(typeof(FieldConstants.UserRegistrationField), userRegistrationField)}{Environment.NewLine}" : "";

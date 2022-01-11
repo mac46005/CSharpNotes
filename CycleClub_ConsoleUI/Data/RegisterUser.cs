@@ -28,15 +28,15 @@ namespace CycleClub_ConsoleUI.Data
                 User user = new User
                 {
                     EmailAddress = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],
-                    FirstName = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],
-                    LastName = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],
-                    Password = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],
-                    DateOfBirth = DateTime.Parse(fields[(int)FieldConstants.UserRegistrationField.EmailAddress]),
-                    PhoneNumber = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],
-                    AddressFirstLine = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],
-                    AddressSecondLine = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],
-                    AddressCity = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],
-                    PostCode = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],
+                    FirstName = fields[(int)FieldConstants.UserRegistrationField.FirstName],
+                    LastName = fields[(int)FieldConstants.UserRegistrationField.LastName],
+                    Password = fields[(int)FieldConstants.UserRegistrationField.Password],
+                    DateOfBirth = DateTime.Parse(fields[(int)FieldConstants.UserRegistrationField.DateOfBirth]),
+                    PhoneNumber = fields[(int)FieldConstants.UserRegistrationField.PhoneNumber],
+                    AddressFirstLine = fields[(int)FieldConstants.UserRegistrationField.AddressFirstLine],
+                    AddressSecondLine = fields[(int)FieldConstants.UserRegistrationField.AddressSecondLine],
+                    AddressCity = fields[(int)FieldConstants.UserRegistrationField.AddressCity],
+                    PostCode = fields[(int)FieldConstants.UserRegistrationField.PostCode],
                 };
 
                 dbContext.Users.Add(user);

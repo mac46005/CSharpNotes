@@ -10,6 +10,7 @@ namespace CycleClub_ConsoleUI.FieldValidators
 
     public interface IFieldValidator
     {
+        string[] FieldArray { get; }
         void InitializeValidatorDelegates();
         FieldValidatorDel ValidatorDel { get; }
     }

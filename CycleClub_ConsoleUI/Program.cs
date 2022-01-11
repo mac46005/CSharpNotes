@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CycleClub_ConsoleUI.Views;
+using System;
 
 namespace CycleClub_ConsoleUI
 {
@@ -6,7 +7,10 @@ namespace CycleClub_ConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IView mainView = Factory.GetMainViewObject();
+            mainView.RunView();
+
+            Console.ReadKey();
         }
     }
 }
