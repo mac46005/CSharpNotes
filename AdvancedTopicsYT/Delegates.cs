@@ -91,8 +91,36 @@ namespace AdvancedTopicsYT{
 
 
     // Part 2 Delegates
+    // Look at Cycle Club Registration console application and referenced libraries
 
+    // Part 3 Covariance & Contravariance
 
+    public class CovarianceExample
+    {
+        public class BaseClass
+        {
+            // class code
+        }
 
+        public class DerivedClass : BaseClass
+        {
+            // class code
+        }
+
+        delegate BaseClass MyDelegate();
+
+        public static DerivedClass MyMethod()
+        {
+            // method code
+            return new DerivedClass();
+        }
+
+        public static void Run()
+        {
+            MyDelegate myDelegate = MyMethod;
+        }
+    }
+
+    
 
 }
