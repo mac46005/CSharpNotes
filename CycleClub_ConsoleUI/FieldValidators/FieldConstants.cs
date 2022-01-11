@@ -23,4 +23,23 @@ namespace CycleClub_ConsoleUI.FieldValidators
             PostCode
         }
     }
+
+    public interface IUserRegistrationField
+    {
+        enum UserRegistrationField 
+        {
+            EmailAddress,
+            FirstName,
+            LastName,
+            Password,
+            PasswordCompare,
+            DateOfBirth,
+            PhoneNumber,
+            AddressFirstLine,
+            AddressSecondLine,
+            AddressCity,
+            PostCode
+
+        }
+    }
 }
