@@ -95,6 +95,13 @@ namespace AdvancedTopicsYT{
 
     // Part 3 Covariance & Contravariance
 
+
+
+    /// <summary>
+    /// Covariance
+    /// Even though the parameter type of 'MyMethod' is less derived than the parameter type of the 'MyDelegate1' delegate 
+    /// and the 'MyDelegate2' delegate an object of type 'MyDelegate1' and 'MyDelegate2' can reference the 'MyMethod' method
+    /// </summary>
     public class CovarianceExample
     {
         public class BaseClass
@@ -121,6 +128,42 @@ namespace AdvancedTopicsYT{
         }
     }
 
+
+
+    // Contravariance
+    public class Contravariance
+    {
+        public class BaseClass
+        {
+            // class code
+        }
+
+        public class DerivedClass1 : BaseClass
+        {
+            // class code
+        }
+
+        public class DerivedClass2 : BaseClass
+        {
+            // class code
+        }
+
+        delegate void MyDelegate1(DerivedClass1 derivedClass1);
+        delegate void MyDelegate2(DerivedClass2 derivedClass2);
+
+
+        public static void MyMethod(BaseClass obj)
+        {
+            // method code
+        }
+
+
+        static void Run()
+        {
+            MyDelegate1 myDelegate1 = MyMethod;
+            MyDelegate2 myDelegate2 = MyMethod;
+        }
+    }
     
 
 }
