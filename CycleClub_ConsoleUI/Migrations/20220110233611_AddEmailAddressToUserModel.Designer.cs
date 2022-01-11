@@ -3,14 +3,16 @@ using System;
 using CycleClub_ConsoleUI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CycleClub_ConsoleUI.Migrations
 {
     [DbContext(typeof(ClubMemberShipDbContext))]
-    partial class ClubMemberShipDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220110233611_AddEmailAddressToUserModel")]
+    partial class AddEmailAddressToUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
