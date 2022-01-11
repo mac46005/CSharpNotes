@@ -1,35 +1,66 @@
 ﻿using System;
+using System.IO;
 
 namespace DelegatesPart3
 {
     class Program
     {
-        delegate void LogIceCarDetails(ICECar iCECar);
-        delegate void LogEVCarDetails(EVCar eVCar);
+        delegate void LogIceCarDetailsDel(ICECar iCECar);
+        delegate void LogEVCarDetailsDel(EVCar eVCar);
         static void Main(string[] args)
         {
 
+            //               Covariance
             CarFactoryDel carFactoryDel = CarFactory.ReturnICECar;
 
-            Car iceCar = carFactoryDel(1,"Audi R8");
+            Car iceCar = carFactoryDel(1, "Audi R8");
 
-
-            Console.WriteLine($"Object type: {iceCar.GetType()}");
-            Console.WriteLine($"Car Details: {iceCar.GetCarDetails()}");
 
 
             carFactoryDel = CarFactory.ReturnEVCar;
             Car evCar = carFactoryDel(32, "Tesla Model - 3");
 
-            Console.WriteLine($"Object type: {evCar.GetType()}");
-            Console.WriteLine($"Car Details: {evCar.GetCarDetails()}");
+            
+
+
+
+            //              Contravariance
+            LogIceCarDetailsDel logIceCarDetailsDel = LogCarDetails;
+
+            logIceCarDetailsDel(iceCar as ICECar);
+
+
+            LogEVCarDetailsDel logEvCarDetailsDel = LogCarDetails;
+
+            logEvCarDetailsDel(evCar as EVCar);
+
 
             Console.ReadKey();
 
-            Console.WriteLine();
+        }
 
-
-            Console.WriteLine("Hello World!");
+        static void LogCarDetails(Car car)
+        {
+            if(car is ICECar)
+            {
+                using (StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "IceDetails.txt")))
+                {
+                    sw.WriteLine($"Object Type: {car.GetType()}");
+                    sw.WriteLine($"Car Details: {car.GetCarDetails()}");
+                }
+            }
+            else if(car is EVCar)
+            {
+                using (StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "EVDetails.txt")))
+                {
+                    sw.WriteLine($"Object Type: {car.GetType()}");
+                    sw.WriteLine($"Car Details: {car.GetCarDetails()}");
+                }
+            }
+            else
+            {
+                throw new ArgumentException("Not a Car object!");
+            }
 
 
 
