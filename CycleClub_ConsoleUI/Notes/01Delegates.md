@@ -166,3 +166,6 @@ myAction = (arg1,...,arg16) => {
 
 myAction()
 ```
+
+## Predicate  
+Is used to 
