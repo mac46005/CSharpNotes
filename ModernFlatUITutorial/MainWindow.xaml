@@ -30,6 +30,18 @@
                        Foreground="White"
                        FontSize="22"
                        Margin="20,0,0,0"/>
+            
+            
+            <TextBox Width="250"
+                     Height="40"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="1"
+                     Style="{StaticResource ModerTextBox}"/>
+
+
+
 
             <StackPanel Grid.Row="1">
                 <RadioButton Content="Home"
@@ -55,12 +67,16 @@
                              Style="{StaticResource MenuButtonTheme}"/>
             </StackPanel>
 
-            <TextBox Width="250"
-                     Height="40"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Left"
-                     Margin="5"
-                     Grid.Column="1"/>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1">
+                
+            </ContentControl>
+            
+            
+            
+            
+            
         </Grid>
     </Border>
 </Window>
