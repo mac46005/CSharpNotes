@@ -37,6 +37,8 @@ namespace ModernDashboard.MVVM.ViewModels
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
             MenuItemsCollection.Filter += MenuItems_Filter;
+
+            SelectedViewModel = new DesktopViewModel();
         }
 
 
@@ -108,6 +110,22 @@ namespace ModernDashboard.MVVM.ViewModels
             }
         }
 
+        // Menu Button Command
+        private ICommand _menuCommand;
+        public ICommand MenuCommand
+        {
+            get
+            {
+                if (_menuCommand == null)
+                {
+                    _menuCommand = new RelayCommand(param => SwitchViews(param));
+                }
+                return _menuCommand;
+            }
+        }
+
+
+
         // Show PC View
         public void PCView()
         {
@@ -168,6 +186,9 @@ namespace ModernDashboard.MVVM.ViewModels
                 return _closeAppCommand;
             }
         }
+
+
+
 
     }
 }

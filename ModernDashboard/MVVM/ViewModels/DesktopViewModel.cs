@@ -15,19 +15,19 @@ namespace ModernDashboard.MVVM.ViewModels
         {
             ObservableCollection<DesktopItems> desktopItems = new ObservableCollection<DesktopItems>
             {
-                new DesktopItems { DesktopName = "File", DesktopImage = @"Assets/file_icon.png" },
-                new DesktopItems { DesktopName = "Music", DesktopImage = @"Assets/musical_icon.png" },
-                new DesktopItems { DesktopName = "Pictures", DesktopImage = @"Assets/picture_icon.png" },
-                new DesktopItems { DesktopName = "Analytics", DesktopImage = @"Assets/analytics_icon.png" },
-                new DesktopItems { DesktopName = "Webcam", DesktopImage = @"Assets/webcam_icon.png" },
-                new DesktopItems { DesktopName = "Printer", DesktopImage = @"Assets/printer_icon.png" },
-                new DesktopItems { DesktopName = "Services", DesktopImage = @"Assets/services_icon.png" },
-                new DesktopItems { DesktopName = "Chart", DesktopImage = @"Assets/chart_icon.png" },
-                new DesktopItems { DesktopName = "Film", DesktopImage = @"Assets/film_icon.png" },
-                new DesktopItems { DesktopName = "Alarm", DesktopImage = @"Assets/alarm_icon.png" },
-                new DesktopItems { DesktopName = "Headphone", DesktopImage = @"Assets/headphone_icon.png" },
-                new DesktopItems { DesktopName = "Password", DesktopImage = @"Assets/password_icon.png" },
-                new DesktopItems { DesktopName = "Calendar", DesktopImage = @"Assets/calendar_icon.png" }
+                new DesktopItems { DesktopName = "File", DesktopImage = @"Assets/Images/file_icon.png" },
+                new DesktopItems { DesktopName = "Music", DesktopImage = @"Assets/Images/musical_icon.png" },
+                new DesktopItems { DesktopName = "Pictures", DesktopImage = @"Assets/Images/picture_icon.png" },
+                new DesktopItems { DesktopName = "Analytics", DesktopImage = @"Assets/Images/analytics_icon.png" },
+                new DesktopItems { DesktopName = "Webcam", DesktopImage = @"Assets/Images/webcam_icon.png" },
+                new DesktopItems { DesktopName = "Printer", DesktopImage = @"Assets/Images/printer_icon.png" },
+                new DesktopItems { DesktopName = "Services", DesktopImage = @"Assets/Images/services_icon.png" },
+                new DesktopItems { DesktopName = "Chart", DesktopImage = @"Assets/Images/chart_icon.png" },
+                new DesktopItems { DesktopName = "Film", DesktopImage = @"Assets/Images/film_icon.png" },
+                new DesktopItems { DesktopName = "Alarm", DesktopImage = @"Assets/Images/alarm_icon.png" },
+                new DesktopItems { DesktopName = "Headphone", DesktopImage = @"Assets/Images/headphone_icon.png" },
+                new DesktopItems { DesktopName = "Password", DesktopImage = @"Assets/Images/password_icon.png" },
+                new DesktopItems { DesktopName = "Calendar", DesktopImage = @"Assets/Images/calendar_icon.png" }
 
             };
 
