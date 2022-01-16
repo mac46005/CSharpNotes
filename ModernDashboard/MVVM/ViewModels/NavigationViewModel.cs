@@ -1,7 +1,9 @@
-﻿using ModernDashboard.MVVM.Models;
+﻿using ModernDashboard.Core;
+using ModernDashboard.MVVM.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
+using System.Windows.Input;
 
 namespace ModernDashboard.MVVM.ViewModels
 {
@@ -78,5 +80,94 @@ namespace ModernDashboard.MVVM.ViewModels
                 e.Accepted = false;
             }
         }
+
+
+
+        // Select ViewModel
+        private object _selectedViewModel;
+
+        public object SelectedViewModel
+        {
+            get { return _selectedViewModel; }
+            set 
+            {
+                _selectedViewModel = value;
+                OnPropertyChanged(nameof(SelectedViewModel));
+            }
+        }
+
+        public void SwitchViews(object parameter)
+        {
+            switch (parameter)
+            {
+                case "Desktop":
+                    SelectedViewModel = new DesktopViewModel();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // Show PC View
+        public void PCView()
+        {
+            SelectedViewModel = new PCViewModel();
+        }
+
+
+        private ICommand _pccommand;
+        public ICommand ThisPCCommand
+        {
+            get
+            {
+                if(_pccommand == null)
+                {
+                    _pccommand = new RelayCommand(param => PCView());
+                }
+                return _pccommand;
+            }
+        }
+
+
+
+        // Show Home View
+        private void ShowHome()
+        {
+            SelectedViewModel = new HomeViewModel();
+        }
+
+        private ICommand _backHomeCommand;
+        public ICommand BackHomeCommand
+        {
+            get
+            {
+                if(_backHomeCommand == null)
+                {
+                    _backHomeCommand = new RelayCommand(p => ShowHome());
+                }
+                return _backHomeCommand;
+            }
+        }
+
+        // Close App
+        public void CloseApp(object obj)
+        {
+            MainWindow win = obj as MainWindow;
+            win.Close();
+        }
+
+        private ICommand _closeAppCommand;
+        public ICommand CloseAppCommand
+        {
+            get
+            {
+                if(_closeAppCommand == null)
+                {
+                    _closeAppCommand = new RelayCommand(p => CloseApp(p));
+                }
+                return _closeAppCommand;
+            }
+        }
+
     }
 }
