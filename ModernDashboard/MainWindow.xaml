@@ -13,6 +13,10 @@
         Background="Transparent"
         AllowsTransparency="True">
     <Grid>
-
+        <!-- Background Border-->
+        <Border Background="#ECF0F1"
+                CornerRadius="10">
+            
+        </Border>
     </Grid>
 </Window>
