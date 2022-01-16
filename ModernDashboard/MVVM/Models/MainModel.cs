@@ -82,6 +82,6 @@ namespace ModernDashboard.MVVM.Models
     public class TrashItems
     {
         public string TrashName { get; set; }
-        public string TrashImages { get; set; }
+        public string TrashImage { get; set; }
     }
 }
