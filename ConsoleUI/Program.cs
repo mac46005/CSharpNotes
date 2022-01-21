@@ -11,7 +11,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            decimal[] data1 = { 72,73,76,76,78 };
+            decimal[] data1 = { 7,8,9,10,11,12,13,14,15 };
             decimal mean = Mean(data1);
             decimal median = Median(data1);
             RangeOfDataSet(data1);
@@ -19,11 +19,17 @@ namespace ConsoleUI
             Dictionary<decimal,int> mode = TheMode(data1);
             Console.WriteLine($"The mean is: {mean}");
             Console.WriteLine($"The median is: {median}");
+
+            Console.WriteLine("The Mode:");
             foreach (var item in mode)
             {
                 Console.WriteLine(item);
             }
 
+            Console.WriteLine();
+
+            Console.WriteLine("Standard Deviation");
+            SampleStandardDeviation(data1);
 
             Console.ReadKey();
         }
@@ -117,6 +123,12 @@ namespace ConsoleUI
 
 
 
+
+
+
+
+
+
         /// <summary>
         /// Measures of Variations
         /// </summary>
@@ -128,6 +140,46 @@ namespace ConsoleUI
             decimal[] sorted = dataSet;
             decimal result = sorted[sorted.Length - 1] - sorted[0];
             return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dataSet"></param>
+        /// <returns></returns>
+        public static void SampleStandardDeviation(decimal[] dataSet)
+        {
+            Array.Sort(dataSet);
+
+            //Find the mean of the dataSet
+            decimal mean = Mean(dataSet);
+
+            //Find deviation for each dataset
+            decimal[] deviationArray = new decimal[dataSet.Length];
+            for (int i = 0; i < dataSet.Length; i++)
+            {
+                deviationArray[i] = dataSet[i] - mean;
+            }
+
+
+            // (x - mean)^2
+            decimal[] sumOfSquaredDeviations = new decimal[dataSet.Length];
+            for (int i = 0; i < dataSet.Length; i++)
+            {
+
+                sumOfSquaredDeviations[i] = deviationArray[i] * deviationArray[i];
+            }
+
+            for (int i = 0; i < dataSet.Length; i++)
+            {
+                Console.WriteLine($"{dataSet[i]}|{deviationArray[i]}|{sumOfSquaredDeviations[i]}");
+            }
+
+
+            decimal sumOfAllSquareDev = sumOfSquaredDeviations.Sum();
+            decimal divideOverNumberOfObservations = sumOfAllSquareDev / (dataSet.Length - 1);
+            double overallStandardDeviation = Math.Sqrt((double)divideOverNumberOfObservations);
+            Console.WriteLine($"Standard Deviation: {overallStandardDeviation}");
         }
     }
 }
