@@ -11,10 +11,12 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            decimal[] songs = { 14, 12, 14, 12, 29, 12, 16, 11, 14, 6, 14, 14 };
-            decimal mean = Mean(songs);
-            decimal median = Median(songs);
-            Dictionary<decimal,int> mode = TheMode(songs);
+            decimal[] data1 = { 72,73,76,76,78 };
+            decimal mean = Mean(data1);
+            decimal median = Median(data1);
+            RangeOfDataSet(data1);
+
+            Dictionary<decimal,int> mode = TheMode(data1);
             Console.WriteLine($"The mean is: {mean}");
             Console.WriteLine($"The median is: {median}");
             foreach (var item in mode)
@@ -30,6 +32,12 @@ namespace ConsoleUI
         {
         }
 
+
+        /// <summary>
+        /// Measure of Center
+        /// </summary>
+        /// <param name="dataSet"></param>
+        /// <returns></returns>
         public static decimal Mean(decimal[] dataSet)
         {
             Array.Sort(dataSet);
@@ -43,6 +51,11 @@ namespace ConsoleUI
             return result;
         }
 
+        /// <summary>
+        /// Measures of Center
+        /// </summary>
+        /// <param name="dataSet"></param>
+        /// <returns></returns>
         public static decimal Median(decimal[] dataSet)
         {
             decimal[] middle;
@@ -72,6 +85,12 @@ namespace ConsoleUI
             return result;
         }
 
+
+        /// <summary>
+        /// Measures of Centers
+        /// </summary>
+        /// <param name="dataSet"></param>
+        /// <returns></returns>
         public static Dictionary<decimal,int> TheMode(decimal[] dataSet)
         {
             Array.Sort(dataSet);
@@ -93,6 +112,22 @@ namespace ConsoleUI
             }
             
             return keyValuePairs;
+        }
+
+
+
+
+        /// <summary>
+        /// Measures of Variations
+        /// </summary>
+        /// <param name="dataSet"></param>
+        /// <returns></returns>
+        public static decimal RangeOfDataSet(decimal[] dataSet)
+        {
+            Array.Sort(dataSet);
+            decimal[] sorted = dataSet;
+            decimal result = sorted[sorted.Length - 1] - sorted[0];
+            return result;
         }
     }
 }
